@@ -247,7 +247,24 @@ ssh-keygen
 
 ssh-copy-id user@IP
 
+```
+
+```bash
+
 vi hosts.ini
+
+```
+
+Example hosts file - Change the group name and server ip addresses with real private or public addresses
+
+```bash
+
+[servers]
+192.168.1.1
+
+```
+
+```bash
 
 ansible -i hosts.ini -m ping all
 
@@ -261,7 +278,7 @@ ansible -i hosts.ini -m ping -u ubuntu servers
 
 vi wordpress.yml
 
----
+```
 
 ```bash
 
@@ -331,18 +348,19 @@ vi wordpress.yml
         priv: "your_database_name.*:ALL"
         state: present
 
----
+```
 
 ```bash
 
 ansible-playbook -i hosts.ini wordpress.yml
 
----
+```
 
 
 ********************
 
-Wordpress Setup and Docker - How to deploy wordpress on docker/dokcer-compose yaml config file?!
+Wordpress Setup and Docker - How to deploy wordpress on docker/dokcer-compose yaml config file?! - Requirements
+
 
 ```bash
 
@@ -395,6 +413,11 @@ sudo docker rm -f $(sudo docker ps -q)
 
 ```
 
+
+********************
+
+Wordpress Setup and Docker - How to deploy wordpress on docker/dokcer-compose yaml config file?! - Lab1
+
 ```bash
 
 sudo vi docker-compose.yml
@@ -446,6 +469,11 @@ sudo docker-compose down
 sudo docker ps -a
 
 ```
+
+
+********************
+
+Wordpress Setup and Docker - How to deploy wordpress on docker/dokcer-compose yaml config file?! - Lab2
 
 ```bash
 
