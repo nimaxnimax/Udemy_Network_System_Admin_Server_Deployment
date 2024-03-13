@@ -359,7 +359,7 @@ ansible-playbook -i hosts.ini wordpress.yml
 
 ********************
 
-Wordpress Setup and Docker - How to deploy wordpress on docker/dokcer-compose yaml config file?! - Requirements
+Wordpress Setup and Docker - How to deploy wordpress on docker/docker-compose yaml config file?! - Requirements
 
 
 ```bash
@@ -416,7 +416,7 @@ sudo docker rm -f $(sudo docker ps -q)
 
 ********************
 
-Wordpress Setup and Docker - How to deploy wordpress on docker/dokcer-compose yaml config file?! - Lab1
+Wordpress Setup and Docker - How to deploy wordpress on docker/docker-compose yaml config file?! - Lab1
 
 ```bash
 
@@ -473,7 +473,7 @@ sudo docker ps -a
 
 ********************
 
-Wordpress Setup and Docker - How to deploy wordpress on docker/dokcer-compose yaml config file?! - Lab2
+Wordpress Setup and Docker - How to deploy wordpress on docker/docker-compose yaml config file?! - Lab2
 
 ```bash
 
