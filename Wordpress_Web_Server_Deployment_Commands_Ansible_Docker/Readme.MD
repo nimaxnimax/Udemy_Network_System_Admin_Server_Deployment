@@ -335,21 +335,14 @@ vi wordpress.yml
         mode: 0755
 
     - name: Create MySQL database
-      become: true
-      shell: "mysql -e 'CREATE DATABASE WP_DEMO_DB;'"
-
-    - name: Create MySQL database
-      become: yes
       shell: "mysql -e 'CREATE DATABASE IF NOT EXISTS WP_DEMO_DB;'"
 
     - name: Create MySQL user and grant privileges
-      become: yes
       shell: "mysql -e \"CREATE USER '{{ your_mysql_user }}'@'localhost' IDENTIFIED BY '{{ your_mysql_password }}'; GRANT ALL PRIVILEGES ON TEST2.* TO '{{ your_mysql_user }}'@'localhost'; FLUSH PRIVILEGES;\""
 
   vars:
     your_mysql_user: "your_mysql_user"
     your_mysql_password: "Abcd1234!@#$"
-
 
 ```
 
