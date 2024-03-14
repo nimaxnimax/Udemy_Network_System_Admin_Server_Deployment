@@ -422,7 +422,7 @@ sudo vi docker-compose.yml
 
 ```bash
 
-version: '3.9'
+version: '3.3'
 
 services:
   db:
@@ -479,7 +479,7 @@ sudo vi docker-compose.yml
 
 ```bash
 
-version: '3.9'
+version: '3.3'
 
 services:
   db:
