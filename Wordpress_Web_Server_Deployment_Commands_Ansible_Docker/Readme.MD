@@ -338,7 +338,7 @@ vi wordpress.yml
       shell: "mysql -e 'CREATE DATABASE IF NOT EXISTS WP_DEMO_DB;'"
 
     - name: Create MySQL user and grant privileges
-      shell: "mysql -e \"CREATE USER '{{ your_mysql_user }}'@'localhost' IDENTIFIED BY '{{ your_mysql_password }}'; GRANT ALL PRIVILEGES ON TEST2.* TO '{{ your_mysql_user }}'@'localhost'; FLUSH PRIVILEGES;\""
+      shell: "mysql -e \"CREATE USER '{{ your_mysql_user }}'@'localhost' IDENTIFIED BY '{{ your_mysql_password }}'; GRANT ALL PRIVILEGES ON WP_DEMO_DB.* TO '{{ your_mysql_user }}'@'localhost'; FLUSH PRIVILEGES;\""
 
   vars:
     your_mysql_user: "your_mysql_user"
