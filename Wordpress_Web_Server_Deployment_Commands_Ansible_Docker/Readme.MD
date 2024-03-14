@@ -287,6 +287,7 @@ vi wordpress.yml
   become: yes
 
   tasks:
+
     - name: Update apt cache
       apt:
         update_cache: yes
@@ -308,7 +309,7 @@ vi wordpress.yml
           - php-soap
           - php-intl
           - php-zip
-          - python3-mysqldb  # Add this line to install the MySQL Python module
+          - python3-mysqldb
 
     - name: Start Apache service
       service:
@@ -333,20 +334,22 @@ vi wordpress.yml
         group: www-data
         mode: 0755
 
-    - name: Configure MySQL database
-      mysql_db:
-        name: your_database_name
-        state: present
-      environment:
-        MYSQL_ROOT_PASSWORD: your_mysql_root_password
+    - name: Create MySQL database
+      become: true
+      shell: "mysql -e 'CREATE DATABASE WP_DEMO_DB;'"
 
-    - name: Create MySQL user
-      mysql_user:
-        name: your_mysql_user
-        password: your_mysql_password
-        host: localhost
-        priv: "your_database_name.*:ALL"
-        state: present
+    - name: Create MySQL database
+      become: yes
+      shell: "mysql -e 'CREATE DATABASE IF NOT EXISTS WP_DEMO_DB;'"
+
+    - name: Create MySQL user and grant privileges
+      become: yes
+      shell: "mysql -e \"CREATE USER '{{ your_mysql_user }}'@'localhost' IDENTIFIED BY '{{ your_mysql_password }}'; GRANT ALL PRIVILEGES ON TEST2.* TO '{{ your_mysql_user }}'@'localhost'; FLUSH PRIVILEGES;\""
+
+  vars:
+    your_mysql_user: "your_mysql_user"
+    your_mysql_password: "Abcd1234!@#$"
+
 
 ```
 
